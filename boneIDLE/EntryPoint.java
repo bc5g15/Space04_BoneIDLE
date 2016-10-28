@@ -1,4 +1,4 @@
-package sc02_BoneIDLE;
+package boneIDLE;
 
 
 public class EntryPoint {
