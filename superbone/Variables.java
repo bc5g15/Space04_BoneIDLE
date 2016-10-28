@@ -73,4 +73,9 @@ public class Variables {
 		return output;
 	}
 	
+	public static void Clear()
+	{
+		vars.clear();
+	}
+	
 }

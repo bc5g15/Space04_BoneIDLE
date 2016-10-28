@@ -14,6 +14,7 @@ public class Controller
 	{
 		instCount = 0;
 		current.clear();
+		Variables.Clear();
 	}
 	
 	public static void AddSet(InstructionSet is)
