@@ -1,4 +1,4 @@
-package sc02_BoneIDLE;
+package boneIDLE;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -21,6 +21,7 @@ public class Swing2 implements ActionListener {
 	private JTextArea code;
 	private JTextArea vars;
 	
+	
 	public void actionPerformed(ActionEvent e)
 	{
 		//Respond to button presses.
@@ -35,7 +36,6 @@ public class Swing2 implements ActionListener {
 		else if(e.getActionCommand().equals("run"))
 		{
 			superbone.Controller.FullRun();
-			superbone.Variables.PrintVars();
 		}
 		else if(e.getActionCommand().equals("next"))
 		{
