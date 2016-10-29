@@ -7,19 +7,22 @@ public class InstructionSet {
 	private ArrayList<Executable> inst;
 	private Iterator<Executable> it = null;
 	private Conditional c;
+	private int instStart;
 	
 	public InstructionSet()
 	{
 		inst = new ArrayList<Executable>();
 		//it = inst.iterator();
 		c = null;
+		instStart = 0;
 	}
 	
-	public InstructionSet(Conditional c)
+	public InstructionSet(Conditional c, int startpoint)
 	{
 		inst = new ArrayList<Executable>();
 		//it = inst.iterator();
 		this.c = c;
+		instStart = startpoint;
 	}
 	
 	
@@ -67,7 +70,7 @@ public class InstructionSet {
 				//If true. Loop again.
 				it = inst.iterator();
 				//Also, Controller instruction count needs to be adjusted.
-				Controller.adjustInstructionNumber(-(this.getSize()+1));
+				Controller.setInstructionNum(instStart);
 			}
 			else
 			{

@@ -58,10 +58,10 @@ public class Controller
 		return instCount;
 	}
 	
-	public static void adjustInstructionNumber(int value)
-	{
-		instCount += value;
-	}
+//	public static void adjustInstructionNumber(int value)
+//	{
+//		instCount += value;
+//	}
 	
 	/*
 	 * Used by the REPL interpreter.
@@ -71,6 +71,11 @@ public class Controller
 		//"Simple" defined as "Not affecting control flow"
 		String s = inst.replace(";", "");
 		Reader.interpretBasic(s).execute();
+	}
+	
+	public static void setInstructionNum(int i)
+	{
+		instCount = i;
 	}
 	
 }

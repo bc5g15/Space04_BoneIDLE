@@ -24,6 +24,7 @@ public class Reader {
 		
 		//Split the file into individual instructions
 		//Then run those through an interpreter.
+		int instrNum = 0;
 		String[] codes = fileText.toLowerCase().split(";");
 		for(String item : codes)
 		{
@@ -37,7 +38,7 @@ public class Reader {
 				if(temp.equals("while"))
 				{
 					Conditional c = new VarNotZero(st.nextToken());
-					InstructionSet i = new InstructionSet(c);
+					InstructionSet i = new InstructionSet(c, instrNum);
 					//Cheat. Here I should really evaluate the condition.
 					EnterLoop e = new EnterLoop(i, c);
 					current.peek().AddInstruction(e);
@@ -56,6 +57,7 @@ public class Reader {
 					current.peek().AddInstruction(interpretBasic(item));
 				}
 			}
+			instrNum++;
 		}
 	}
 

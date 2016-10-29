@@ -26,7 +26,8 @@ public class EnterLoop implements Executable {
 		{
 			//Otherwise set forward the instruction count of the controller
 			//DISCLAIMER: This is horrible code, but I can't immediately think of a better way to do this.
-			Controller.adjustInstructionNumber(loop.getSize()+1);
+			//Controller.adjustInstructionNumber(loop.getSize()+1);
+			Controller.setInstructionNum(Controller.getInstructionNumber() + loop.getSize() + 1);
 		}
 
 	}
