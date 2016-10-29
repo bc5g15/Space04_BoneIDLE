@@ -28,6 +28,7 @@ import superbone.Controller;
 
 /*
  * The GUI design and handling for boneIDLE
+ * Very inefficient. Should probably have split some of the sections into other classes.
  */
 public class Swing2 implements ActionListener {
 	
