@@ -30,6 +30,7 @@ public class Controller
 	public static void next()
 	{
 		current.peek().next();
+		instCount += 1;
 	}
 	
 	public static boolean hasNext()
@@ -50,6 +51,26 @@ public class Controller
 		{
 			next();
 		}
+	}
+	
+	public static int getInstructionNumber()
+	{
+		return instCount;
+	}
+	
+	public static void adjustInstructionNumber(int value)
+	{
+		instCount += value;
+	}
+	
+	/*
+	 * Used by the REPL interpreter.
+	 */
+	public static void handleSimpleInstruction(String inst)
+	{
+		//"Simple" defined as "Not affecting control flow"
+		String s = inst.replace(";", "");
+		Reader.interpretBasic(s).execute();
 	}
 	
 }

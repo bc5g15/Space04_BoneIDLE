@@ -10,6 +10,7 @@ public class Variables {
 	private static HashMap<String, Integer> vars = new HashMap<String, Integer>();
 	
 	//Implement the clear instruction
+	//This also declares the variable
 	public static void clrVar(String name)
 	{
 		vars.put(name, 0);
@@ -24,6 +25,7 @@ public class Variables {
 			i++;
 			vars.put(name, i);
 		}
+		else System.out.println("Unknown variable referenced! Ignoring Instruction.");
 	}
 	
 	//Implement the decrement instruction
@@ -35,12 +37,21 @@ public class Variables {
 			i--;
 			vars.put(name, i);
 		}
+		else
+		{
+			System.out.println("Unknown variable referenced! Ignoring Instruction.");
+		}
 	}
 	
 	//Return a variable value;
 	public static int GetVal(String name)
 	{
-		return vars.get(name);
+		if(vars.containsKey(name)) return vars.get(name);
+		else
+		{
+			System.out.println("Unknown variable referenced! Returning default value 0");
+			return 0;
+		}
 	}
 	
 	//Prints out the variables in a nicely formatted way.

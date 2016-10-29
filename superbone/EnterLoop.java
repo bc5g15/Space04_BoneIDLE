@@ -21,7 +21,12 @@ public class EnterLoop implements Executable {
 		if(cond.Evaluate())
 		{
 			Controller.AddSet(loop);
-			
+		}
+		else
+		{
+			//Otherwise set forward the instruction count of the controller
+			//DISCLAIMER: This is horrible code, but I can't immediately think of a better way to do this.
+			Controller.adjustInstructionNumber(loop.getSize()+1);
 		}
 
 	}

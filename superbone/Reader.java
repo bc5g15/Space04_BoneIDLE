@@ -71,7 +71,7 @@ public class Reader {
 		String[] code = new String[2];
 		StringTokenizer temp = new StringTokenizer(text);
 		code[0] = temp.nextToken();
-		code[1] = temp.nextToken();
+		if(temp.hasMoreTokens()) code[1] = temp.nextToken();
 		
 		
 		//I'm sure there is a better way of doing this.

@@ -29,6 +29,7 @@ public class InstructionSet {
 		{
 			it = inst.iterator();
 		}
+		
 	}
 	
 	public boolean hasNext()
@@ -65,6 +66,8 @@ public class InstructionSet {
 			{
 				//If true. Loop again.
 				it = inst.iterator();
+				//Also, Controller instruction count needs to be adjusted.
+				Controller.adjustInstructionNumber(-(this.getSize()+1));
 			}
 			else
 			{
